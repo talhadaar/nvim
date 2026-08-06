@@ -17,6 +17,13 @@ return {
   -- { import = "nvchad.blink.lazyspec" },
 
   {
+    "folke/which-key.nvim",
+    opts = function()
+      return require "configs.whichkey"
+    end,
+  },
+
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
