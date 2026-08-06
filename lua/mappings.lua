@@ -9,10 +9,7 @@ map("i", "jk", "<ESC>")
 
 -- git hunks
 map("n", "<leader>gh", function()
-  -- "all" = modified files across cwd + attached buffers' git dirs
-  require("gitsigns").setqflist("all", { open = false }, function()
-    require("telescope.builtin").quickfix { prompt_title = "Git Hunks" }
-  end)
+  require("configs.githunks").pick()
 end, { desc = "telescope git hunks" })
 
 map("n", "]c", function()
