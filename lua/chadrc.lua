@@ -14,11 +14,15 @@ M.base46 = {
 	-- },
 }
 
+-- NvChad's own UI ignores winborder; these are its equivalents.
+M.ui = {
+	telescope = { style = "bordered" },
+}
+
+M.term = {
+	float = { border = "rounded" },
+}
+
 -- M.nvdash = { load_on_startup = true }
--- M.ui = {
---       tabufline = {
---          lazyload = false
---      }
--- }
 
 return M

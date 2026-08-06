@@ -3,6 +3,7 @@ return {
   install = { colorscheme = { "nvchad" } },
 
   ui = {
+    border = "rounded", -- lazy.nvim hardcodes "none", so winborder never reaches it
     icons = {
       ft = "",
       lazy = "󰂠 ",
