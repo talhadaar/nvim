@@ -11,12 +11,6 @@ map("i", "<C-j>", "<Down>", { desc = "Move down" })
 map("i", "<C-k>", "<Up>", { desc = "Move up" })
 map("i", "jk", "<ESC>")
 
--- windows
-map("n", "<C-h>", "<C-w>h", { desc = "Window left" })
-map("n", "<C-l>", "<C-w>l", { desc = "Window right" })
-map("n", "<C-j>", "<C-w>j", { desc = "Window down" })
-map("n", "<C-k>", "<C-w>k", { desc = "Window up" })
-
 -- general
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "Clear highlights" })
@@ -51,10 +45,27 @@ map("n", "<leader>w", "<cmd>w<CR>", { desc = "Write buffer" })
 map("n", "<leader>x", function()
   require("nvchad.tabufline").close_buffer()
 end, { desc = "Close buffer" })
-map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "Focus explorer" })
+map("n", "<leader>e", function()
+  -- NvimTreeFocus opens the tree when closed, so this covers both directions.
+  if vim.bo.filetype == "NvimTree" then
+    vim.cmd "wincmd p"
+  else
+    vim.cmd "NvimTreeFocus"
+  end
+end, { desc = "Explorer / last buffer" })
 map("n", "<leader>?", "<cmd>WhichKey<CR>", { desc = "All keymaps" })
 map("n", "<leader>/", "gcc", { desc = "Toggle comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "Toggle comment", remap = true })
+
+-- leader W: windows
+map("n", "<leader>Wh", "<C-w>h", { desc = "Go left" })
+map("n", "<leader>Wj", "<C-w>j", { desc = "Go down" })
+map("n", "<leader>Wk", "<C-w>k", { desc = "Go up" })
+map("n", "<leader>Wl", "<C-w>l", { desc = "Go right" })
+map("n", "<leader>Ws", "<C-w>s", { desc = "Split horizontal" })
+map("n", "<leader>Wv", "<C-w>v", { desc = "Split vertical" })
+map("n", "<leader>Wq", "<C-w>q", { desc = "Close window" })
+map("n", "<leader>W=", "<C-w>=", { desc = "Equalize sizes" })
 
 -- leader b: buffers
 map("n", "<leader>bn", "<cmd>enew<CR>", { desc = "New buffer" })

@@ -16,6 +16,7 @@ return {
     { "<leader>t", group = "Terminal", icon = { icon = "", color = "grey" } },
     { "<leader>u", group = "UI / Toggles", icon = { icon = "󰒓", color = "purple" } },
     { "<leader>d", group = "Diagnostics", icon = { icon = "󰒡", color = "red" } },
+    { "<leader>W", group = "Window", icon = { icon = "󰅁", color = "azure" } },
 
     { "<leader>w", icon = { icon = "󰆓", color = "green" } },
     { "<leader>x", icon = { icon = "󰅖", color = "red" } },
