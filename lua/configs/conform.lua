@@ -2,6 +2,8 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" },
     python = { "ruff_organize_imports", "ruff_format" },
+    rust = { "rustfmt" },
+    toml = { "taplo" },
     -- css = { "prettier" },
     -- html = { "prettier" },
   },
