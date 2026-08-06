@@ -53,6 +53,9 @@ map("n", "<leader>e", function()
     vim.cmd "NvimTreeFocus"
   end
 end, { desc = "Explorer / last buffer" })
+-- :confirm prompts on unsaved changes instead of erroring out
+map("n", "<leader>q", "<cmd>confirm q<CR>", { desc = "Quit" })
+map("n", "<leader>Q", "<cmd>confirm qall<CR>", { desc = "Quit all" })
 map("n", "<leader>?", "<cmd>WhichKey<CR>", { desc = "All keymaps" })
 map("n", "<leader>/", "gcc", { desc = "Toggle comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "Toggle comment", remap = true })

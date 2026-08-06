@@ -20,6 +20,8 @@ return {
 
     { "<leader>w", icon = { icon = "󰆓", color = "green" } },
     { "<leader>x", icon = { icon = "󰅖", color = "red" } },
+    { "<leader>q", icon = { icon = "󰈆", color = "red" } },
+    { "<leader>Q", icon = { icon = "󰩈", color = "red" } },
     { "<leader>e", icon = { icon = "󰙅", color = "yellow" } },
     { "<leader>/", icon = { icon = "󰆈", color = "grey" } },
     { "<leader>?", icon = { icon = "󰌌", color = "blue" } },
