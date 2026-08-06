@@ -47,6 +47,10 @@ map({ "n", "t" }, "<A-i>", function()
 end, { desc = "Toggle floating term" })
 
 -- leader: direct
+map("n", "<leader>w", "<cmd>w<CR>", { desc = "Write buffer" })
+map("n", "<leader>x", function()
+  require("nvchad.tabufline").close_buffer()
+end, { desc = "Close buffer" })
 map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "Focus explorer" })
 map("n", "<leader>?", "<cmd>WhichKey<CR>", { desc = "All keymaps" })
 map("n", "<leader>/", "gcc", { desc = "Toggle comment", remap = true })
@@ -61,9 +65,6 @@ end, { desc = "Next buffer" })
 map("n", "<leader>b[", function()
   require("nvchad.tabufline").prev()
 end, { desc = "Previous buffer" })
-map("n", "<leader>bd", function()
-  require("nvchad.tabufline").close_buffer()
-end, { desc = "Close buffer" })
 
 -- leader f: find
 map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Files" })
@@ -166,8 +167,8 @@ map("n", "<leader>ut", function()
   require("nvchad.themes").open()
 end, { desc = "Theme picker" })
 
--- leader x: diagnostics
-map("n", "<leader>xx", vim.diagnostic.setloclist, { desc = "Loclist" })
-map("n", "<leader>xd", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = "Document diagnostics" })
-map("n", "<leader>xw", "<cmd>Telescope diagnostics<CR>", { desc = "Workspace diagnostics" })
-map("n", "<leader>xl", vim.diagnostic.open_float, { desc = "Line diagnostics" })
+-- leader d: diagnostics
+map("n", "<leader>dd", vim.diagnostic.setloclist, { desc = "Loclist" })
+map("n", "<leader>dl", vim.diagnostic.open_float, { desc = "Line diagnostics" })
+map("n", "<leader>db", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = "Document diagnostics" })
+map("n", "<leader>dw", "<cmd>Telescope diagnostics<CR>", { desc = "Workspace diagnostics" })

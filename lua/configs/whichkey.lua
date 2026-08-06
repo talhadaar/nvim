@@ -15,8 +15,10 @@ return {
     { "<leader>lw", group = "Workspace folders", icon = { icon = "󰉋", color = "green" } },
     { "<leader>t", group = "Terminal", icon = { icon = "", color = "grey" } },
     { "<leader>u", group = "UI / Toggles", icon = { icon = "󰒓", color = "purple" } },
-    { "<leader>x", group = "Diagnostics", icon = { icon = "󰒡", color = "red" } },
+    { "<leader>d", group = "Diagnostics", icon = { icon = "󰒡", color = "red" } },
 
+    { "<leader>w", icon = { icon = "󰆓", color = "green" } },
+    { "<leader>x", icon = { icon = "󰅖", color = "red" } },
     { "<leader>e", icon = { icon = "󰙅", color = "yellow" } },
     { "<leader>/", icon = { icon = "󰆈", color = "grey" } },
     { "<leader>?", icon = { icon = "󰌌", color = "blue" } },
