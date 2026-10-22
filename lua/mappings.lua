@@ -60,6 +60,10 @@ map("n", "<leader>?", "<cmd>WhichKey<CR>", { desc = "All keymaps" })
 map("n", "<leader>/", "gcc", { desc = "Toggle comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "Toggle comment", remap = true })
 
+-- gv reselects, so you can keep tapping to indent further
+map("v", "<Tab>", ">gv", { desc = "Indent" })
+map("v", "<S-Tab>", "<gv", { desc = "Dedent" })
+
 -- leader W: windows
 map("n", "<leader>Wh", "<C-w>h", { desc = "Go left" })
 map("n", "<leader>Wj", "<C-w>j", { desc = "Go down" })
@@ -151,7 +155,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 map({ "n", "x" }, "<leader>lf", function()
-  require("conform").format { lsp_fallback = true }
+  require("conform").format({ lsp_format = "fallback" }, function(err)
+    if err then
+      vim.notify(err, vim.log.levels.ERROR)
+    end
+  end)
 end, { desc = "Format file" })
 
 -- leader t: terminal
