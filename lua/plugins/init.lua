@@ -35,6 +35,7 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    cmd = { "TSUpdate", "TSUninstall", "TSLog" },
     opts = {
       ensure_installed = {
         "lua", "luadoc", "printf", "vim", "vimdoc",
