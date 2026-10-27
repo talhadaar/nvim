@@ -6,5 +6,7 @@ require "nvchad.options"
 -- signature help, diagnostics, cmp menu/docs, mason, which-key, vim.ui.select.
 vim.o.winborder = "rounded"
 
+vim.o.relativenumber = true
+
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
